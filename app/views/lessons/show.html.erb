@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @lesson.title %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @lesson.content %>
-</p>
+<div class="container">
+    <div class="shadow p-3 m-5 bg-white rounded text-center ">
+      <%= link_to lessons_path do %>
+      <button type="button" class="close mt-1 " aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <% end %>
+      <h1><%= @lesson.title %></h1>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
+
+      <p><%= @lesson.created_at.strftime("%D %B %Y") %></p>
+
+      <p> <%=  raw @lesson.content %><p>
+      <%= link_to "Editer", edit_lesson_path(@lesson.id), class:"btn btn-warning" %>
+      <%= link_to "Détruire", lesson_path(@lesson.id), method: :delete, class:"btn btn-danger" %>
+    </div>
+</div>

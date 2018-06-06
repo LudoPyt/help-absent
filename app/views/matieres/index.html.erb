@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div class="text-center">
+<h1>Matières</h1>
+</div>
+    <div class="container">
+      <% @matieres.each do |matiere| %>
+
+      <%= link_to matiere do %>
+        <div class="shadow p-3 mb-5 bg-white rounded d-flex justify-content-between">
+
+          <div>
+          <h2><%= matiere.title %></h2>
+          </div>
+        </div>
+      <% end %>
+
+
+      <% end %>
+
+<%= link_to 'Ajouter une matière', new_matiere_path %>

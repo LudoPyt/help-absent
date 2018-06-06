@@ -11,17 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+
+  <div class="container">
+      <div class="shadow p-3 m-5 bg-white rounded text-center ">
+        <%= link_to lessons_path do %>
+        <button type="button" class="close mt-1 " aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <% end %>
+        <%= simple_form_for @lesson do |f| %>
+          <%= f.input :title, label:"Titre" %>
+          
+            <%= f.input :content, label:"Contenu", as: :summernote %>
+
+          <%= f.button :submit, "Appliquer" %>
+        <% end %>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
