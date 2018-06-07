@@ -24,9 +24,15 @@ class LessonsController < ApplicationController
   # POST /lessons
   # POST /lessons.json
   def create
-    @lesson = Lesson.create(lesson_params)
-    redirect_to lessons_path
-
+    respond_to do |format|
+      if @lesson.create(lesson_params)
+        format.html { redirect_to @lesson.matiere, notice: 'La leçon a bien été créée.' }
+        format.json { render :show, status: :ok, location: @lesson }
+      else
+        format.html { render :edit }
+        format.json { render json: @lesson.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /lessons/1
@@ -34,7 +40,7 @@ class LessonsController < ApplicationController
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
-        format.html { redirect_to @lesson, notice: 'La leçon a bien été modifiée.' }
+        format.html { redirect_to @lesson.matiere, notice: 'La leçon a bien été modifiée.' }
         format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit }
@@ -61,6 +67,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:title, :content)
+      params.require(:lesson).permit(:title, :content, :matiere_id)
     end
 end

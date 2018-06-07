@@ -9,6 +9,7 @@ class MatieresController < ApplicationController
   end
 
   def show
+    @lessons = Lesson.where(matiere_id: @matiere)
     respond_with(@matiere)
   end
 

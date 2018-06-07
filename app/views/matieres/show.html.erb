@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @matiere.title %>
-</p>
+<div class="container">
+ <% @lessons.each do |lesson|%>
 
-<%= link_to 'Edit', edit_matiere_path(@matiere) %> |
-<%= link_to 'Back', matieres_path %>
+ <%= link_to lesson do %>
+
+   <div class="shadow p-3 mb-5 bg-white rounded d-flex justify-content-between">
+     <div>
+     <h2><%= lesson.title %></h2>
+   </div>
+    <% end %>
+  <% end %>

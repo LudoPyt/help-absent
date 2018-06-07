@@ -21,9 +21,9 @@
         <% end %>
         <%= simple_form_for @lesson do |f| %>
           <%= f.input :title, label:"Titre" %>
-          
-            <%= f.input :content, label:"Contenu", as: :summernote %>
 
+            <%= f.input :content, label:"Contenu", as: :summernote %>
+          <%= f.association :matiere, as: :select, prompt: "Choisis une matière" %>
           <%= f.button :submit, "Appliquer" %>
         <% end %>
       </div>

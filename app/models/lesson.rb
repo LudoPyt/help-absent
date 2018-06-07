@@ -1,3 +1,5 @@
 class Lesson < ApplicationRecord
-
-end
+  belongs_to :matiere
+  validates :title, :content, presence: true
+  
+  end

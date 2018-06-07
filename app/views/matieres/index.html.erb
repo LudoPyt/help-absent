@@ -5,7 +5,7 @@
     <div class="container">
       <% @matieres.each do |matiere| %>
 
-      <%= link_to matiere do %>
+      <%= link_to matiere_path(matiere) do %>
         <div class="shadow p-3 mb-5 bg-white rounded d-flex justify-content-between">
 
           <div>
