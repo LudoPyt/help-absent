@@ -2566,3 +2566,57 @@ Processing by LessonsController#index as HTML
 Completed 200 OK in 120ms (Views: 117.9ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/lessons/new" for 127.0.0.1 at 2018-06-12 14:26:08 +0200
+Processing by LessonsController#new as HTML
+  Rendering lessons/new.html.erb within layouts/application
+  Rendered lessons/_form.html.erb (925.8ms)
+  Rendered lessons/new.html.erb within layouts/application (927.4ms)
+Completed 500 Internal Server Error in 931ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `lesson_params' for #<#<Class:0x00007ff62d15a560>:0x00007ff6360acb78>
+Did you mean?  lesson_path):
+    14: 
+    15:   <div class="container">
+    16:       <div class="shadow p-3 m-5 bg-white rounded text-center ">
+    17:         <%= link_to @lesson.matiere(lesson_params) do %>
+    18:         <button type="button" class="close mt-1 " aria-label="Close">
+    19:           <span aria-hidden="true">&times;</span>
+    20:         </button>
+  
+app/views/lessons/_form.html.erb:17:in `block in _app_views_lessons__form_html_erb__1947410835565244646_70347722640860'
+app/views/lessons/_form.html.erb:1:in `_app_views_lessons__form_html_erb__1947410835565244646_70347722640860'
+app/views/lessons/new.html.erb:4:in `_app_views_lessons_new_html_erb__1765606234427257079_70347722681140'
+Started GET "/lessons/new" for 127.0.0.1 at 2018-06-12 14:31:54 +0200
+Processing by LessonsController#new as HTML
+  Rendering lessons/new.html.erb within layouts/application
+  Rendered lessons/_form.html.erb (1188.0ms)
+  Rendered lessons/new.html.erb within layouts/application (1189.7ms)
+Completed 500 Internal Server Error in 1195ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `lesson_params' for #<#<Class:0x00007ff62d15a560>:0x00007ff62cf910a8>
+Did you mean?  lesson_path):
+    14: 
+    15:   <div class="container">
+    16:       <div class="shadow p-3 m-5 bg-white rounded text-center ">
+    17:         <%= link_to @lesson.matiere(lesson_params) do %>
+    18:         <button type="button" class="close mt-1 " aria-label="Close">
+    19:           <span aria-hidden="true">&times;</span>
+    20:         </button>
+  
+app/views/lessons/_form.html.erb:17:in `block in _app_views_lessons__form_html_erb__1947410835565244646_70347646706420'
+app/views/lessons/_form.html.erb:1:in `_app_views_lessons__form_html_erb__1947410835565244646_70347646706420'
+app/views/lessons/new.html.erb:4:in `_app_views_lessons_new_html_erb__1765606234427257079_70347646602560'
+Started GET "/lessons/new" for 127.0.0.1 at 2018-06-12 14:32:05 +0200
+Processing by LessonsController#new as HTML
+  Rendering lessons/new.html.erb within layouts/application
+  [1m[36mMatiere Load (1.0ms)[0m  [1m[34mSELECT "matieres".* FROM "matieres"[0m
+  ↳ app/views/lessons/_form.html.erb:26
+  Rendered lessons/_form.html.erb (192.1ms)
+  Rendered lessons/new.html.erb within layouts/application (193.8ms)
+Completed 200 OK in 348ms (Views: 346.0ms | ActiveRecord: 1.0ms)
+
+
