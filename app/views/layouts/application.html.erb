@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg ">
+    <%= link_to root_path, class:"navbar-brand" do %>
+    <%= image_tag "sos.png" %>
+    <% end %>
+
+
+  <div class="collapse navbar-collapse " id="navbarSupportedmatiere">
+    <ul class="navbar-nav ">
+      <li class="btn btn-primary">
+        <%= link_to matieres_path do %> <h2>Matières<h2> <% end %>
+      </li>
+      <li class="btn btn-primary ">
+          <%= link_to lessons_path do %> <h2>Leçons<h2> <% end %>
+      </li>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

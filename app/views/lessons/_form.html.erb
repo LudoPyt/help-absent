@@ -14,7 +14,7 @@
 
   <div class="container">
       <div class="shadow p-3 m-5 bg-white rounded text-center ">
-        <%= link_to lessons_path do %>
+        <%= link_to @lesson.matiere(lesson_params) do %>
         <button type="button" class="close mt-1 " aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
